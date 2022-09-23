@@ -4,13 +4,64 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto - apiPokemon</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+    <title>Proyecto-Apipokemon✨</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="./js/app.js"></script>
+    <div class="container">
+        <h1 class="text-center">Listado de Pokemones ❤</h1>
+        <div class="filtro">
+            <div class="flex">
+                <div class="numero">
+                    <p>Selecciona el total de Pokemones</p>
+                    <input type="number"  id="filtroPokemones">
+                    <button id = "btnFiltro" class="btn btn-primary"> Filtrar</button>
+                    <button onclick = "fetchPokemones()" class="btn btn-warning"> Mostrar todo</button>
+                </div>
+                <div class="nombre">
+                    <p>Busqueda por nombre</p>
+                    <input type="text" oninput="buscaPorNombre()" id="buscaNombre">
+                </div>
+            </div>
+        </div>
+
+        <div class="flex">
+            <div id="lista" class="col-7"></div>
+            <div id = "pokemonBuscado" class="col-5"></div>
+        </div>
+    </div>
+
+    <template id ="infoPokemon">
+        <div class="alert alert-primary">
+            <p>Nombre</p>
+            <p>URL</p>
+            <button class="btn btn-dark">Mostrar</button>
+        </div>
+    </template>
+
+    <template id = "card">
+    <article class="card">
+        <div class="card-body">
+            <img src="" alt="" class="card-body-img">
+            <h1 class="card-body-title">
+                <span>26</span>
+            </h1>
+                <p class="card-body-text"></p>
+            </div>
+                <div class="card-footer">
+                    <div class="card-footer-social">
+                        <h3>80k</h3>
+                        <p>Ataque</p>
+                        <h3>80k</h3>
+                        <p>Ataque especial</p>
+                        <h3>80k</h3>
+                        <p>Defensa</p>
+                    </div>
+                </div>
+    </article>
+    </template>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" ></script>
+    <script src = "./js/app.js"></script>
 </body>
 </html>
